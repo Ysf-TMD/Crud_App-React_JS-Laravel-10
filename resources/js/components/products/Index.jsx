@@ -21,6 +21,37 @@ const Index = () => {
                 setProducts(data.products)
             })
     }
+    // on ajoute la fonction responsable sur la modification ;
+    const editProduct = (id)=>{
+        // on ajoute la navigation correspondante au route /product/edit/....
+        navigate("/product/edit/"+id)
+    }
+    const  deleteProduct = async (id)=>{
+        Swal.fire({
+            title: "Are You Sur",
+            text : "You won't able to revert this !!!",
+            incon : "warning",
+            showCancelButton:true ,
+            confirmButtonColor : "#d33",
+            confirmButtonText : "Yes , delete it !!! "
+        })
+            .then ((result)=>{
+                if(result.isConfirmed){
+                    axios.get("/api/delete_product/"+id)
+                        .then(()=>{
+                            Swal.fire(
+                                "deleted!",
+                                "Product successfully deleted ",
+                                "success"
+                            )
+                            getProduct()
+                        })
+                        .catch(()=>{
+
+                        })
+                }
+            })
+    }
     return (
         <div>
             <div className="container">
@@ -45,11 +76,11 @@ const Index = () => {
                             </tr>
                         </thead>
 
-                        <tbody>
+                        <tbody className={'container'}>
                         {
                             products.length > 0 && (
                                 products.map((item , key )=>(
-                                    <tr>
+                                    <tr >
                                         <td scope="row">
                                             <img src={`/upload/${item.photo}`}  alt="err"  height={"40px"}/>
                                         </td>
@@ -64,9 +95,9 @@ const Index = () => {
                                         </td>
 
                                         <div className="col-md-5  d-flex justify-content-between">
-                                            <button className="btn  px-5 mx-2 btn-warning">Modifier</button>
+                                            <button className="btn  px-5 mx-2 btn-warning" onClick={()=>editProduct(item.id)}>Modifier</button>
 
-                                            <button className="btn border px-5 btn-danger">Supprimer</button>
+                                            <button className="btn border px-5 btn-danger" onClick={()=>deleteProduct(item.id)}>Supprimer</button>
                                         </div>
 
                                     </tr>

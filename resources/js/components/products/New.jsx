@@ -32,6 +32,9 @@ const New = ()=>{
 
 
     }
+    /*ajouter la fonction responsable d'ajouter un produit  on prenant les informations via FormData  c'est un class respo
+        qui prend les valeurs et les combinées .... faut faire des recherches sur ce FormData
+    */
     const createProduct =async (e)=>{
         e.preventDefault();
 
