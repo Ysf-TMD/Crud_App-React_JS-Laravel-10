@@ -99,7 +99,7 @@ const Edit=()=>{
                 <div className="  col-md-6">
                     <div className="h2 text-center container mt-4"> Edit Product <i className="bi bi-pencil"></i> </div>
                     <div className="container w-50 mx-auto">
-                        <button className="btn-primary btn form-control" onClick={(e)=>updateProduct(e) } >Save</button>
+                        <button className="btn-primary btn form-control" onClick={(e)=>updateProduct(e) } >Edite</button>
                     </div>
                     <div className="container main">
                         <label>Name</label>
@@ -112,7 +112,7 @@ const Edit=()=>{
 
 
                         {
-                            avatar ===true
+                            avatar === true
                                 ?<img src={ourImage(photo)} alt=" " className={"my-2 container "} width={'100px'}  />
                                 :<img src={photo} alt=" " className={"my-2 container "} width={'100px'}  />
                         }

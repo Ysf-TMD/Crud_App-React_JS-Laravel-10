@@ -22,7 +22,7 @@ class ProductController extends Controller
             $sub = substr($request->photo , 0,$strpos);
             $ex = explode("/",$sub)[1];
             $name = time().".".$ex ;
-            $img = Image::make($request->photo)->resize(500,500) ;
+            $img = Image::make($request->photo)->resize(550,550) ;
 //            apres cette etape la jai ajouter la commande via cmd : composer require intervention / image
 //            sans oublier de montionner que jai ajouter la configuration du package Intervention dans config>app.php
 //            57:05

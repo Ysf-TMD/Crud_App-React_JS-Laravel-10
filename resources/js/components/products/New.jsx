@@ -63,7 +63,7 @@ const New = ()=>{
             <div className="  col-md-6">
                 <div className="h2 text-center container mt-4"> Add Product </div>
                 <div className="container w-50 mx-auto">
-                    <button className="btn-primary btn form-control" onClick={(event)=>{createProduct(event)}} >Save</button>
+                   {/* <button className="btn-primary btn form-control" onClick={(event)=>{createProduct(event)}} >Save</button>*/}
                 </div>
                 <div className="container main">
                     <label>Name</label>
@@ -94,10 +94,10 @@ const New = ()=>{
 
             <div className=" col-md-6 container "> {/*wrapper right*/}
 
-                <div className="container ">wrapper left</div>
+                {/*<div className="container ">wrapper left</div>*/}
                 {/*hna dar div dial card hta nrj3 liha */}
 
-                <div className="container ">  {/*wrapper right */}
+                <div className="container mt-5">  {/*wrapper right */}
                     <p> Product type : </p>
                     <input type="text" name="" id="" className={"form-control"} value ={type} onChange={(e)=>{setType(e.target.value)}}/>
                     <hr/>
